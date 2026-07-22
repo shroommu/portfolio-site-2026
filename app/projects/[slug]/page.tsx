@@ -39,8 +39,19 @@ export default async function Page({
 
   return (
     <div>
-      <h1>{frontmatter.title}</h1>
-      <h2>{frontmatter.date}</h2>
+      <h1 style={{ color: "red", fontSize: "48px", textAlign: "center" }}>
+        {frontmatter.title}
+      </h1>
+      <h2
+        style={{
+          color: "blue",
+          fontSize: "16px",
+          marginBottom: "16px",
+          textAlign: "center",
+        }}
+      >
+        {frontmatter.date}
+      </h2>
       <Post />
     </div>
   );
