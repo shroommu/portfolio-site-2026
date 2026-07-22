@@ -35,7 +35,24 @@ export default async function Page({
   const { slug } = await params;
   const { default: Post, frontmatter } = await import(`@/_posts/${slug}.mdx`);
 
-  return <Post />;
+  return (
+    <div>
+      <h1 style={{ color: "red", fontSize: "48px", textAlign: "center" }}>
+        {frontmatter.title}
+      </h1>
+      <h2
+        style={{
+          color: "blue",
+          fontSize: "16px",
+          marginBottom: "16px",
+          textAlign: "center",
+        }}
+      >
+        {frontmatter.date}
+      </h2>
+      <Post />
+    </div>
+  );
 }
 
 export const dynamicParams = false;

@@ -6,7 +6,6 @@ import { Metadata } from "next";
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { slug } = await params;
 
-  // Dynamically import the MDX file
   const { frontmatter } = await import(`@/_projects/${slug}.mdx`);
 
   return {
