@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Alex Kruckenberg",
+  title: { default: "Alex Kruckenberg", template: "Alex Kruckenberg | %s" },
   description: "Data Science Portfolio",
 };
 
