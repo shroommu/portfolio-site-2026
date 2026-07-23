@@ -1,5 +1,16 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const blinker = localFont({
+  src: "../public/assets/fonts/Blinker/Blinker-Regular.ttf",
+  variable: "--font-blinker",
+});
+
+const shippori = localFont({
+  src: "../public/assets/fonts/Shippori_Mincho/ShipporiMincho-Regular.ttf",
+  variable: "--font-shippori",
+});
 
 export const metadata: Metadata = {
   title: { default: "Alex Kruckenberg", template: "Alex Kruckenberg | %s" },
@@ -12,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${blinker.variable} ${shippori.variable}`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

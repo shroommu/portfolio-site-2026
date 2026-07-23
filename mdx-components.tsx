@@ -2,19 +2,16 @@ import type { MDXComponents } from "mdx/types";
 
 const components: MDXComponents = {
   a: ({ children, href }) => (
-    <a href={href} style={{ color: "blue", textDecoration: "underline" }}>
+    <a href={href} style={{ textDecoration: "underline" }}>
       {children}
     </a>
   ),
   h1: ({ children }) => (
-    <h1 style={{ color: "red", fontSize: "48px", textAlign: "center" }}>
-      {children}
-    </h1>
+    <h1 style={{ fontSize: "48px", textAlign: "center" }}>{children}</h1>
   ),
   h2: ({ children }) => (
     <h2
       style={{
-        color: "blue",
         fontSize: "36px",
         textAlign: "center",
         marginBottom: "16px",
@@ -24,19 +21,15 @@ const components: MDXComponents = {
     </h2>
   ),
   p: ({ children }) => (
-    <p style={{ color: "green", fontSize: "16px", marginBottom: "16px" }}>
-      {children}
-    </p>
+    <p style={{ fontSize: "16px", marginBottom: "16px" }}>{children}</p>
   ),
   ul: ({ children }) => (
-    <ul style={{ color: "purple", fontSize: "16px", margin: "0 0 16px 16px" }}>
-      {children}
-    </ul>
+    <ul style={{ fontSize: "16px", margin: "0 0 16px 16px" }}>{children}</ul>
   ),
   li: ({ children }) => (
     <li
       style={{
-        color: "orange",
+        color: "inherit",
         fontSize: "16px",
         listStyleType: "disc",
         marginLeft: "16px",
@@ -57,6 +50,13 @@ const components: MDXComponents = {
         {children}
       </a>
     </div>
+  ),
+  img: ({ src, alt }) => (
+    <img
+      src={src}
+      alt={alt}
+      style={{ maxWidth: "100%", margin: "0 auto 16px auto" }}
+    />
   ),
 };
 
