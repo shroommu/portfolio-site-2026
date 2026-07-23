@@ -36,19 +36,11 @@ export default async function Page({
   const { default: Post, frontmatter } = await import(`@/_posts/${slug}.mdx`);
 
   return (
-    <div>
-      <h1 style={{ fontSize: "48px", textAlign: "center" }}>
+    <div className="flex flex-col p-6 md:p-16">
+      <h1 className="text-center text-[32px] md:text-[48px]">
         {frontmatter.title}
       </h1>
-      <h2
-        style={{
-          fontSize: "16px",
-          marginBottom: "16px",
-          textAlign: "center",
-        }}
-      >
-        {frontmatter.date}
-      </h2>
+      <p className="text-center mb-4">{frontmatter.date}</p>
       <Post />
     </div>
   );

@@ -24,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${blinker.variable} ${shippori.variable}`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <main className="xs:max-w-full md:max-w-2/3 mx-auto">{children}</main>
+      </body>
     </html>
   );
 }

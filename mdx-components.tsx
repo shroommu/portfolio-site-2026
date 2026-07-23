@@ -2,61 +2,34 @@ import type { MDXComponents } from "mdx/types";
 
 const components: MDXComponents = {
   a: ({ children, href }) => (
-    <a href={href} style={{ textDecoration: "underline" }}>
+    <a
+      href={href}
+      className="text-decoration-underline text-theme-color-secondary"
+    >
       {children}
     </a>
   ),
   h1: ({ children }) => (
-    <h1 style={{ fontSize: "48px", textAlign: "center" }}>{children}</h1>
+    <h1 className="text-center text-[32px] md:text-[48px] mb-4">{children}</h1>
   ),
   h2: ({ children }) => (
-    <h2
-      style={{
-        fontSize: "36px",
-        textAlign: "center",
-        marginBottom: "16px",
-      }}
-    >
-      {children}
-    </h2>
+    <h2 className="text-center text-2xl md:text-[36px] mb-4">{children}</h2>
   ),
-  p: ({ children }) => (
-    <p style={{ fontSize: "16px", marginBottom: "16px" }}>{children}</p>
-  ),
-  ul: ({ children }) => (
-    <ul style={{ fontSize: "16px", margin: "0 0 16px 16px" }}>{children}</ul>
-  ),
-  li: ({ children }) => (
-    <li
-      style={{
-        color: "inherit",
-        fontSize: "16px",
-        listStyleType: "disc",
-        marginLeft: "16px",
-      }}
-    >
-      {children}
-    </li>
-  ),
+  p: ({ children }) => <p className="mb-4">{children}</p>,
+  ul: ({ children }) => <ul className="mb-4 ml-4">{children}</ul>,
+  li: ({ children }) => <li className="list-disc ml-4">{children}</li>,
   CenteredLink: ({ children, href }) => (
-    <div style={{ textAlign: "center", marginBottom: "16px" }}>
+    <div className="text-center mb-4">
       <a
         href={href}
-        style={{
-          color: "blue",
-          textDecoration: "underline",
-        }}
+        className="text-[var(--theme-color-secondary)] underline decoration-[var(--theme-color-secondary)]"
       >
         {children}
       </a>
     </div>
   ),
   img: ({ src, alt }) => (
-    <img
-      src={src}
-      alt={alt}
-      style={{ maxWidth: "100%", margin: "0 auto 16px auto" }}
-    />
+    <img src={src} alt={alt} className="max-w-full mx-auto mb-4" />
   ),
 };
 

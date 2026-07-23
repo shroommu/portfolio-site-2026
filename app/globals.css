@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #ffffff;
+  --background: #171717;
+  --theme-color-primary: #dd6cff;
+  --theme-color-secondary: #fb7cff;
+  --theme-color-tertiary: #ffa4ed;
 }
 
 @theme inline {
@@ -32,4 +35,5 @@ h4,
 h5,
 h6 {
   font-family: var(--font-blinker), serif;
+  color: var(--theme-color-primary);
 }
