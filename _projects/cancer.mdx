@@ -6,7 +6,7 @@ image: "/assets/images/projects/Cancer/cancer.webp"
 tags: ["computer vision", "pytorch", "image classifier"]
 ---
 
-[Check out the Cancer Image Classifier site here!](https://cancer.alexakruckenberg.com)
+<CenteredLink href="https://cancer.alexakruckenberg.com">Check out the Cancer Image Classifier site here!</CenteredLink>
 
 I'm nearing the end of my Master's in Data Science program, and decided this past school term that I was ready to tackle my capstone project. I toyed with a few ideas before settling on building an image classifier, which I knew how to build in concept but had not built in practice beyond a very simple version in a previous class.
 
@@ -24,7 +24,7 @@ After looking at a few image sets, I decided to use the [MultiCancer Dataset](ht
 
 The dataset contains approximately 200,000 images, categorized by type and split into train and validation sets. The image types vary, from microscope slides of biopsies, to MRI scans of internal tumors, to photographs of skin conditions. Below is a sample of the images.
 
-<Image src="/assets/images/projects/Cancer/cancerImageSample.png" />
+![A sample of cancer diagnostic images](/assets/images/projects/Cancer/cancerImageSample.png)
 
 ## Data Preparation
 
@@ -45,7 +45,7 @@ I trained the following models:
 
 Each model was then evaluated on its training loss, accuracy, F1 score, and ROC AUC score, pictured below:
 
-<Image src="/assets/images/projects/Cancer/modelComparison.png" />
+![A table displaying model performance](/assets/images/projects/Cancer/modelComparison.png)
 
 Of the four, I determined that the YOLO model performed best by a decent margin, with the ViT coming in a close second. The ResNet CNN with transfer learning performed best after that, with the non-transfer learning CNN model performing the worst.
 
