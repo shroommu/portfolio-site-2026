@@ -4,16 +4,20 @@ const components: MDXComponents = {
   a: ({ children, href }) => (
     <a
       href={href}
-      className="text-decoration-underline text-theme-color-secondary"
+      className="text-[var(--theme-color-accent)] underline decoration-[var(--theme-color-accent)]"
     >
       {children}
     </a>
   ),
   h1: ({ children }) => (
-    <h1 className="text-center text-[32px] md:text-[48px] mb-4">{children}</h1>
+    <h1 className="text-center text-[32px] md:text-[48px] mb-4 text-[var(--foreground)]">
+      {children}
+    </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="text-center text-2xl md:text-[36px] mb-4">{children}</h2>
+    <h2 className="text-center text-2xl md:text-[36px] mb-4 text-[var(--foreground)]">
+      {children}
+    </h2>
   ),
   p: ({ children }) => <p className="mb-4">{children}</p>,
   ul: ({ children }) => <ul className="mb-4 ml-4">{children}</ul>,
@@ -22,7 +26,7 @@ const components: MDXComponents = {
     <div className="text-center mb-4">
       <a
         href={href}
-        className="text-[var(--theme-color-secondary)] underline decoration-[var(--theme-color-secondary)]"
+        className="text-[var(--theme-color-accent)] underline decoration-[var(--theme-color-accent)]"
       >
         {children}
       </a>

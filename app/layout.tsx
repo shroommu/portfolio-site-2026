@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
+import AppHeader from "@/components/AppHeader";
+import AppFooter from "@/components/AppFooter";
+
 const blinker = localFont({
   src: "../public/assets/fonts/Blinker/Blinker-Regular.ttf",
   variable: "--font-blinker",
@@ -25,7 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${blinker.variable} ${shippori.variable}`}>
       <body className="min-h-full flex flex-col">
-        <main className="xs:max-w-full md:max-w-2/3 mx-auto">{children}</main>
+        <AppHeader />
+        <main className="max-w-full md:max-w-2/3 mx-auto bg-[var(--background)] md:drop-shadow-2xl md:rounded-md">
+          {children}
+        </main>
+        <AppFooter />
       </body>
     </html>
   );
