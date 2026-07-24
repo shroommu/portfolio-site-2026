@@ -3,6 +3,8 @@ import path from "path";
 
 import { Metadata } from "next";
 
+import PreviewCard from "@/components/PreviewCard";
+
 export const metadata: Metadata = {
   title: "Blog",
   description: "Read about my latest projects and thoughts",
@@ -30,12 +32,12 @@ export default async function Page() {
   const postPreviews = await getMdxPreviews();
 
   return (
-    <div>
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 p-4 md:p-8">
+      <h1 className="col-span-full text-[32px] md:text-[48px] mb-4 text-center">
+        Blog Posts
+      </h1>
       {postPreviews.map((preview) => (
-        <div key={preview.slug}>
-          <h2>{preview.title}</h2>
-          <p>{preview.excerpt}</p>
-        </div>
+        <PreviewCard key={preview.slug} postPreview={preview} postType="blog" />
       ))}
     </div>
   );

@@ -3,9 +3,11 @@ import path from "path";
 
 import { Metadata } from "next";
 
+import PreviewCard from "@/components/PreviewCard";
+
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Browse my project library and read about how they were made",
+  description: "Browse my project library and read about how each was made",
 };
 
 const MDX_EXTENSION = ".mdx";
@@ -32,12 +34,16 @@ export default async function Page() {
   const postPreviews = await getMdxPreviews();
 
   return (
-    <div>
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 p-4 md:p-8">
+      <h1 className="col-span-full text-[32px] md:text-[48px] mb-4 text-center">
+        Projects
+      </h1>
       {postPreviews.map((preview) => (
-        <div key={preview.slug}>
-          <h2>{preview.title}</h2>
-          <p>{preview.excerpt}</p>
-        </div>
+        <PreviewCard
+          key={preview.slug}
+          postPreview={preview}
+          postType="projects"
+        />
       ))}
     </div>
   );

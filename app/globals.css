@@ -2,7 +2,9 @@
 
 :root {
   --foreground: #171717;
+  --foreground-pure: #000000;
   --background: #ededed;
+  --background-pure: #ffffff;
   --theme-color-primary: #ff3236;
   --theme-color-secondary: #ff6c2e;
   --theme-color-tertiary: #ffc355;
@@ -74,6 +76,7 @@ body {
     var(--background-gradient-blue), var(--background-gradient-tertiary),
     var(--background-gradient-linear);
   background-color: var(--theme-color-black);
+  background-repeat: no-repeat;
   color: var(--foreground);
   font-family: var(--font-shippori);
 }
