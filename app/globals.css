@@ -3,10 +3,10 @@
 :root {
   --foreground: #171717;
   --background: #ededed;
-  --theme-color-primary: #ff5255;
-  --theme-color-secondary: #ffb291;
+  --theme-color-primary: #ff3236;
+  --theme-color-secondary: #ff6c2e;
   --theme-color-tertiary: #ffc355;
-  --theme-color-accent: #190556;
+  --theme-color-accent: #cc224a;
   --theme-color-black: #000000;
   --text-gradient: linear-gradient(
     90deg,
@@ -24,12 +24,12 @@
     rgba(0, 0, 0, 0.2) 100%
   );
   --background-gradient-tertiary: radial-gradient(
-    circle farthest-corner at 25% 0%,
+    circle farthest-corner at 0% 0%,
     var(--theme-color-tertiary) 0%,
     transparent 33%
   );
   --background-gradient-blue: radial-gradient(
-    circle farthest-corner at 75% 100%,
+    circle farthest-corner at 100% 100%,
     rgb(25, 5, 86) 0%,
     transparent 25%
   );
@@ -47,13 +47,32 @@
     --foreground: #ededed;
     --background: #171717;
     --theme-color-accent: #ffc355;
+    --background-gradient-linear: linear-gradient(
+      150deg,
+      rgba(255, 231, 108, 0.1) 0%,
+      rgba(255, 164, 108, 0.1) 10%,
+      rgba(255, 118, 118, 0.1) 25%,
+      rgba(255, 74, 119, 0.1) 60%,
+      rgba(156, 27, 255, 0.1) 80%,
+      rgba(0, 0, 0, 0.05) 100%
+    );
+    --background-gradient-blue: radial-gradient(
+      circle farthest-corner at 100% 100%,
+      rgba(25, 5, 86, 0.3) 0%,
+      transparent 25%
+    );
+    --background-gradient-tertiary: radial-gradient(
+      circle farthest-corner at 0% 0%,
+      rgba(255, 195, 85, 0.1) 0%,
+      transparent 33%
+    );
   }
 }
 
 body {
   background:
-    var(--background-gradient-blue), var(--background-gradient-linear),
-    var(--background-gradient-tertiary);
+    var(--background-gradient-blue), var(--background-gradient-tertiary),
+    var(--background-gradient-linear);
   background-color: var(--theme-color-black);
   color: var(--foreground);
   font-family: var(--font-shippori);
