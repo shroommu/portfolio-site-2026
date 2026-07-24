@@ -36,9 +36,15 @@ export default async function Page() {
       <h1 className="col-span-full text-[32px] md:text-[48px] mb-4 text-center">
         Blog Posts
       </h1>
-      {postPreviews.map((preview) => (
-        <PreviewCard key={preview.slug} postPreview={preview} postType="blog" />
-      ))}
+      {postPreviews
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .map((preview) => (
+          <PreviewCard
+            key={preview.slug}
+            postPreview={preview}
+            postType="blog"
+          />
+        ))}
     </div>
   );
 }

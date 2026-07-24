@@ -37,7 +37,7 @@ export default async function Page({
 
   return (
     <div className="flex flex-col p-4 md:p-8">
-      <h1 className="text-center text-[32px] md:text-[48px] text-[var(--theme-color-primary)]">
+      <h1 className="text-center text-[32px] md:text-[48px]">
         {frontmatter.title}
       </h1>
       <p className="text-center mb-4">{frontmatter.date}</p>
