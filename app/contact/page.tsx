@@ -8,7 +8,7 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState<null | boolean>(null);
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     fetch("/api/contact", {
       method: "POST",
