@@ -8,8 +8,8 @@
   --theme-color-primary: #ff3236;
   --theme-color-secondary: #ff6c2e;
   --theme-color-tertiary: #ffc355;
-  --theme-color-accent: #cc224a;
-  --theme-color-accent-dark: #991a3a;
+  --theme-color-accent: #ff6c2e;
+  --theme-color-accent-dark: #bd4511;
   --theme-color-black: #000000;
   --text-gradient: linear-gradient(
     90deg,
@@ -51,7 +51,7 @@
     --foreground-pure: #ffffff;
     --background: #171717;
     --background-light: #202020;
-    --theme-color-accent: #ffc355;
+    --theme-color-accent: #b68222;
     --background-gradient-linear: linear-gradient(
       150deg,
       rgba(255, 231, 108, 0.1) 0%,
@@ -68,7 +68,7 @@
     );
     --background-gradient-tertiary: radial-gradient(
       circle farthest-corner at 0% 0%,
-      rgba(255, 195, 85, 0.1) 0%,
+      rgba(255, 204, 108, 0.13) 0%,
       transparent 33%
     );
   }
