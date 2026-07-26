@@ -6,7 +6,7 @@ export default function PreviewCard({
   postType: string;
 }) {
   return (
-    <div className="p-4 overflow-hidden shadow-xl hover:shadow-2xl rounded-md group bg-white">
+    <div className="p-4 overflow-hidden shadow-xl hover:shadow-2xl rounded-md group bg-[var(--background-light)]">
       <a href={`/${postType}/${postPreview?.slug}`}>
         <div className="flex flex-col h-full justify-center gap-2">
           <img

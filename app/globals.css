@@ -4,11 +4,12 @@
   --foreground: #171717;
   --foreground-pure: #000000;
   --background: #ededed;
-  --background-pure: #ffffff;
+  --background-light: #ffffff;
   --theme-color-primary: #ff3236;
   --theme-color-secondary: #ff6c2e;
   --theme-color-tertiary: #ffc355;
   --theme-color-accent: #cc224a;
+  --theme-color-accent-dark: #991a3a;
   --theme-color-black: #000000;
   --text-gradient: linear-gradient(
     90deg,
@@ -47,7 +48,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground: #ededed;
+    --foreground-pure: #ffffff;
     --background: #171717;
+    --background-light: #202020;
     --theme-color-accent: #ffc355;
     --background-gradient-linear: linear-gradient(
       150deg,
