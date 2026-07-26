@@ -44,7 +44,7 @@ export default async function Page() {
           <PreviewCard
             key={preview.slug}
             postPreview={preview}
-            postType="project"
+            postType="projects"
           />
         ))}
     </div>
