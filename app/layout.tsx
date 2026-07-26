@@ -17,7 +17,8 @@ const shippori = localFont({
 
 export const metadata: Metadata = {
   title: { default: "Alex Kruckenberg", template: "Alex Kruckenberg | %s" },
-  description: "Data Science Portfolio",
+  description:
+    "The Data Science and Web Development Portfolio of Alex Kruckenberg",
 };
 
 export default function RootLayout({
