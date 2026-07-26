@@ -12,7 +12,7 @@ export default function AppHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="relative flex justify-between p-4 mb-8 border-b-[var(--background)] border-b-2 bg-[var(--background)] items-center">
+    <header className="relative flex justify-between p-4 mb-8 border-b-[var(--background)] border-b-2 bg-[var(--background)] items-center md:gap-4">
       <a href="/" className="flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
