@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en" className={`${blinker.variable} ${shippori.variable}`}>
       <body className="min-h-screen overflow-x-hidden">
         <AppHeader />
-        <main className="w-[90%] md:w-2/3 min-h-full mx-auto bg-[var(--background)] md:drop-shadow-2xl rounded-md">
+        <main className="w-[90%] md:w-2/3 min-h-full mx-auto mb-8 bg-[var(--background)] md:drop-shadow-2xl rounded-md">
           {children}
         </main>
         <AppFooter />
