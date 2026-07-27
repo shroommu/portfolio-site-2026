@@ -10,17 +10,17 @@ export default function Home() {
       <h2 className="text-[20px] text-center" data-testid="greeting-subheader">
         Software Developer, Data Analyst, Creative
       </h2>
-      <p>
+      <p className="text-center">
         I&apos;m a curious person who loves to create and learn. You&apos;ll
         find me anywhere that code and data interact, plus a few other places
         besides. Have a look around to see what I&apos;ve been working on!
       </p>
-      <p>
+      <p className="text-center">
         I&apos;m located in the Salt Lake Metropolitan area, where I live with a
         pet rabbit who rules my life. When I&apos;m not coding, I like to play
         video games and make art (especially cross stitch).
       </p>
-      <p>Thanks for visiting my site!</p>
+      <p className="text-center">Thanks for visiting my site!</p>
     </div>
   );
 }

@@ -42,7 +42,7 @@ export default function Contact() {
           id="email"
           name="email"
           type="email"
-          className="w-full p-2 border border-gray-400 rounded-md mb-4"
+          className="w-full p-2 border border-gray-400 rounded-md mb-4 bg-[var(--background-light)]"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -53,7 +53,7 @@ export default function Contact() {
           id="subject"
           name="subject"
           type="text"
-          className="w-full p-2 border border-gray-400 rounded-md mb-4"
+          className="w-full p-2 border border-gray-400 rounded-md mb-4 bg-[var(--background-light)]"
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
         />
@@ -64,7 +64,7 @@ export default function Contact() {
           id="message"
           name="message"
           rows={5}
-          className="w-full p-2 border border-gray-400 rounded-md mb-4"
+          className="w-full p-2 border border-gray-400 rounded-md mb-4 bg-[var(--background-light)]"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         ></textarea>
