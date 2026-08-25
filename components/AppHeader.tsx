@@ -156,7 +156,7 @@ export default function AppHeader() {
         </svg>
       </Link>
       <Link href="/" className="flex items-center">
-        <p className="text-[32px] leading-[32px] md:leading-auto md:text-[36px] text-[var(--foreground)] text-center hover:underline hover:text-decoration-[var(--foreground)] font-[var(--font-blinker)]">
+        <p className="text-step-4 leading-[32px] md:leading-auto md:text-step-5 text-[var(--foreground)] text-center hover:underline hover:text-decoration-[var(--foreground)] font-[var(--font-blinker)]">
           Alex Kruckenberg
         </p>
       </Link>
@@ -187,7 +187,7 @@ export default function AppHeader() {
             <li key={href} className="flex items-center">
               <Link
                 href={href}
-                className="flex items-center text-[18px] md:text-[24px] text-[var(--foreground)] hover:underline hover:text-decoration-[var(--foreground)] font-[var(--font-blinker)]"
+                className="flex items-center text-step-1 md:text-step-3 text-[var(--foreground)] hover:underline hover:text-decoration-[var(--foreground)] font-[var(--font-blinker)]"
               >
                 {label}
               </Link>
@@ -251,7 +251,7 @@ export default function AppHeader() {
             <Link
               href="/"
               onClick={() => setIsMenuOpen(false)}
-              className="text-[var(--on-accent)] text-[36px] font-[var(--font-blinker)]"
+              className="text-[var(--on-accent)] text-step-5 font-[var(--font-blinker)]"
             >
               Home
             </Link>
@@ -260,7 +260,7 @@ export default function AppHeader() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-[var(--on-accent)] text-[36px] font-[var(--font-blinker)]"
+                className="text-[var(--on-accent)] text-step-5 font-[var(--font-blinker)]"
               >
                 {link.label}
               </Link>

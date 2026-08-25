@@ -10,12 +10,12 @@ const components: MDXComponents = {
     </a>
   ),
   h1: ({ children }) => (
-    <h1 className="text-center text-[32px] md:text-[48px] mb-4 text-[var(--foreground)]">
+    <h1 className="text-center text-step-4 md:text-step-6 mb-4 text-[var(--foreground)]">
       {children}
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="text-center text-2xl md:text-[36px] mb-4 text-[var(--foreground)]">
+    <h2 className="text-center text-step-3 md:text-step-5 mb-4 text-[var(--foreground)]">
       {children}
     </h2>
   ),

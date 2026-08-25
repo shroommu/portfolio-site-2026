@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { formatDate, toISODate } from "@/lib/formatDate";
+
 export default function PreviewCard({
   postPreview,
   postType,
@@ -22,11 +24,13 @@ export default function PreviewCard({
             />
           </div>
           <div className="h-full flex flex-col justify-between gap-2">
-            <h2 className="text-[18px] md:text-[24px] text-center">
+            <h2 className="text-step-1 md:text-step-3 text-center">
               {postPreview?.title}
             </h2>
-            <p className="text-[14px] text-gray-500 text-center">
-              {postPreview?.date}
+            <p className="text-caption text-gray-500 text-center">
+              <time dateTime={toISODate(postPreview?.date)}>
+                {formatDate(postPreview?.date)}
+              </time>
             </p>
             <p className="text-center">{postPreview?.excerpt}</p>
             <div className="flex flex-wrap gap-2 justify-center">

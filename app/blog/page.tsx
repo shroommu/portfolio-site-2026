@@ -19,7 +19,7 @@ export async function getMdxPreviews() {
   files = fs.readdirSync(targetDirectory);
 
   const frontmatter = files.map(async (filepath) => {
-    const { default: Post, frontmatter } = await import(`@/_posts/${filepath}`);
+    const { frontmatter } = await import(`@/_posts/${filepath}`);
     return {
       ...frontmatter,
       slug: filepath.replace(MDX_EXTENSION, ""),
@@ -33,7 +33,7 @@ export default async function Page() {
 
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 p-4 md:p-8">
-      <h1 className="col-span-full text-[32px] md:text-[48px] mb-4 text-center">
+      <h1 className="col-span-full text-step-4 md:text-step-6 mb-4 text-center">
         Blog Posts
       </h1>
       {postPreviews

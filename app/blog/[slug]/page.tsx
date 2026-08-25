@@ -3,7 +3,13 @@ import path from "path";
 
 import { Metadata } from "next";
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
+import { formatDate, toISODate } from "@/lib/formatDate";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
 
   // Dynamically import the MDX file
@@ -37,11 +43,17 @@ export default async function Page({
 
   return (
     <div className="flex flex-col p-4 md:p-8">
-      <h1 className="text-center text-[32px] md:text-[48px]">
+      <h1 className="text-center text-step-4 md:text-step-6">
         {frontmatter.title}
       </h1>
-      <p className="text-center mb-4">{frontmatter.date}</p>
-      <Post />
+      <p className="text-center mb-4">
+        <time dateTime={toISODate(frontmatter.date)}>
+          {formatDate(frontmatter.date)}
+        </time>
+      </p>
+      <div className="max-w-prose mx-auto w-full">
+        <Post />
+      </div>
     </div>
   );
 }

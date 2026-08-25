@@ -40,7 +40,7 @@ export default function Contact() {
 
   return (
     <div className="p-4 md:p-8">
-      <h1 className="text-[32px] md:text-[48px] text-center">Contact Me</h1>
+      <h1 className="text-step-4 md:text-step-6 text-center">Contact Me</h1>
       <p className="text-center mb-4">
         Feel free to reach out to me by filling out the form below!
       </p>
