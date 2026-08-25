@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 
 import nodemailer from "nodemailer";
 
-export async function POST(req: NextRequest, context: Record<string, any>) {
+export async function POST(req: NextRequest) {
   try {
     const { email, subject, message } = await req.json();
 
@@ -23,10 +23,10 @@ export async function POST(req: NextRequest, context: Record<string, any>) {
     });
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
-  } catch (error: any) {
-    return new Response(
-      JSON.stringify({ success: false, error: error.message }),
-      { status: 500 },
-    );
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    return new Response(JSON.stringify({ success: false, error: message }), {
+      status: 500,
+    });
   }
 }
