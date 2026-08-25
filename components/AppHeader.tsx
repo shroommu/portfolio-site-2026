@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const navLinks = [
@@ -124,7 +125,11 @@ export default function AppHeader() {
 
   return (
     <header className="relative flex justify-between p-4 mb-8 border-b-[var(--background)] border-b-2 bg-[var(--background)] items-center md:gap-4">
-      <a href="/" className="flex items-center" aria-label="Alex Kruckenberg — home">
+      <Link
+        href="/"
+        className="flex items-center"
+        aria-label="Alex Kruckenberg — home"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="-0.5 -0.5 13 13"
@@ -149,12 +154,12 @@ export default function AppHeader() {
             fill="url(#logoGradient)"
           />
         </svg>
-      </a>
-      <a href="/" className="flex items-center">
-        <h1 className="text-[32px] leading-[32px] md:leading-auto md:text-[36px] text-[var(--foreground)] text-center hover:underline hover:text-decoration-[var(--foreground)]">
+      </Link>
+      <Link href="/" className="flex items-center">
+        <p className="text-[32px] leading-[32px] md:leading-auto md:text-[36px] text-[var(--foreground)] text-center hover:underline hover:text-decoration-[var(--foreground)] font-[var(--font-blinker)]">
           Alex Kruckenberg
-        </h1>
-      </a>
+        </p>
+      </Link>
       <div className="flex md:hidden w-16 justify-center">
         <button
           ref={openButtonRef}
@@ -180,11 +185,12 @@ export default function AppHeader() {
         <ul className="flex justify-center space-x-4">
           {navLinks.map(({ href, label }) => (
             <li key={href} className="flex items-center">
-              <a href={href} className="flex items-center">
-                <h2 className="flex items-center text-[18px] md:text-[24px] text-[var(--foreground)] hover:underline hover:text-decoration-[var(--foreground)]">
-                  {label}
-                </h2>
-              </a>
+              <Link
+                href={href}
+                className="flex items-center text-[18px] md:text-[24px] text-[var(--foreground)] hover:underline hover:text-decoration-[var(--foreground)] font-[var(--font-blinker)]"
+              >
+                {label}
+              </Link>
             </li>
           ))}
         </ul>
@@ -242,19 +248,22 @@ export default function AppHeader() {
             </svg>
           </button>
           <nav className="flex flex-col gap-4" aria-label="Mobile">
-            <a href={"/"} onClick={() => setIsMenuOpen(false)}>
-              <h1 className="text-[var(--on-accent)] text-[36px]">Home</h1>
-            </a>
+            <Link
+              href="/"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-[var(--on-accent)] text-[36px] font-[var(--font-blinker)]"
+            >
+              Home
+            </Link>
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
+                className="text-[var(--on-accent)] text-[36px] font-[var(--font-blinker)]"
               >
-                <h1 className="text-[var(--on-accent)] text-[36px]">
-                  {link.label}
-                </h1>
-              </a>
+                {link.label}
+              </Link>
             ))}
           </nav>
           <div className="flex mt-auto justify-center gap-4">

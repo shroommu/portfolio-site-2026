@@ -43,7 +43,16 @@ const components: MDXComponents = {
     </div>
   ),
   img: ({ src, alt }) => (
-    <img src={src} alt={alt} className="max-w-full mx-auto mb-4" />
+    // Arbitrary MDX images have unknown dimensions, so next/image can't be
+    // used here; lazy-load them instead.
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      className="max-w-full mx-auto mb-4"
+    />
   ),
 };
 

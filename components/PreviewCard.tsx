@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function PreviewCard({
   postPreview,
   postType,
@@ -7,13 +10,17 @@ export default function PreviewCard({
 }) {
   return (
     <div className="p-4 overflow-hidden shadow-xl hover:shadow-2xl rounded-md group bg-[var(--background-light)]">
-      <a href={`/${postType}/${postPreview?.slug}`}>
+      <Link href={`/${postType}/${postPreview?.slug}`}>
         <div className="flex flex-col h-full justify-center gap-2">
-          <img
-            src={postPreview?.image}
-            alt={postPreview?.title || "Blog post preview image"}
-            className="h-[100px] md:h-[150px] w-auto object-contain"
-          />
+          <div className="relative h-[100px] md:h-[150px] w-full">
+            <Image
+              src={postPreview?.image}
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+              className="object-contain"
+            />
+          </div>
           <div className="h-full flex flex-col justify-between gap-2">
             <h2 className="text-[18px] md:text-[24px] text-center">
               {postPreview?.title}
@@ -32,7 +39,7 @@ export default function PreviewCard({
             </div>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }

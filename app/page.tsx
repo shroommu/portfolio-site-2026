@@ -1,9 +1,14 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="flex flex-col gap-4 items-center p-4 md:p-8">
-      <img
-        src="assets/images/pfp-circle.png"
-        alt="a picture of the author"
+      <Image
+        src="/assets/images/pfp-circle.png"
+        alt="Portrait of Alex Kruckenberg"
+        width={192}
+        height={192}
+        priority
         className="w-48 h-48 rounded-full"
       />
       <h1 className="text-[36px] text-center">Hi, I&apos;m Alex!</h1>
