@@ -70,7 +70,7 @@ export default function Contact() {
         ></textarea>
         <button
           type="submit"
-          className="px-4 py-2 bg-[var(--theme-color-accent)] text-background rounded-md hover:bg-[var(--theme-color-accent-dark)] mx-auto"
+          className="px-4 py-2 bg-[var(--theme-color-accent)] text-[var(--on-accent)] rounded-md hover:bg-[var(--theme-color-accent-light)] mx-auto"
         >
           Send Message
         </button>

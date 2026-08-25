@@ -236,14 +236,14 @@ export default function AppHeader() {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               aria-hidden="true"
-              className="w-10 h-10 fill-[var(--background)]"
+              className="w-10 h-10 fill-[var(--on-accent)]"
             >
               <path d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 0 0 5.7 7.11L10.59 12l-4.89 4.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4z" />
             </svg>
           </button>
           <nav className="flex flex-col gap-4" aria-label="Mobile">
             <a href={"/"} onClick={() => setIsMenuOpen(false)}>
-              <h1 className="text-[var(--background)] text-[36px]">Home</h1>
+              <h1 className="text-[var(--on-accent)] text-[36px]">Home</h1>
             </a>
             {navLinks.map((link) => (
               <a
@@ -251,7 +251,7 @@ export default function AppHeader() {
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
               >
-                <h1 className="text-[var(--background)] text-[36px]">
+                <h1 className="text-[var(--on-accent)] text-[36px]">
                   {link.label}
                 </h1>
               </a>
@@ -263,7 +263,7 @@ export default function AppHeader() {
               aria-label={socialLinks[0].label}
               className="flex items-center"
             >
-              <GitHubIcon className="w-10 h-10 fill-[var(--background)]" />
+              <GitHubIcon className="w-10 h-10 fill-[var(--on-accent)]" />
             </a>
             <a
               href={socialLinks[1].href}
@@ -272,7 +272,7 @@ export default function AppHeader() {
             >
               <LinkedInIcon
                 className="w-10 h-10"
-                rectFill="var(--background)"
+                rectFill="var(--on-accent)"
                 pathFill="var(--theme-color-accent)"
               />
             </a>

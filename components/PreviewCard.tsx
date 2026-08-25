@@ -27,7 +27,7 @@ export default function PreviewCard({
                 return <span key={tag}>{`#${tag}`}</span>;
               })}
             </div>
-            <div className="flex w-full text-[var(--theme-color-accent)] group-hover:underline">
+            <div className="flex w-full text-[var(--theme-color-link)] group-hover:underline">
               <p className="ml-auto">Read More →</p>
             </div>
           </div>

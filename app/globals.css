@@ -9,7 +9,13 @@
   --theme-color-secondary: #ff6c2e;
   --theme-color-tertiary: #ffc355;
   --theme-color-accent: #ff6c2e;
-  --theme-color-accent-dark: #bd4511;
+  --theme-color-accent-light: #ff8552;
+  /* Text on light surfaces (accent orange fails WCAG AA at 2.8:1) */
+  --theme-color-link: #b03e0e;
+  /* Text/icons placed on top of the accent orange */
+  --on-accent: #171717;
+  --color-success: #166534;
+  --color-error: #b91c1c;
   --theme-color-black: #000000;
   --text-gradient: linear-gradient(
     90deg,
@@ -52,6 +58,11 @@
     --background: #171717;
     --background-light: #272727;
     --theme-color-accent: #c48a1d;
+    --theme-color-accent-light: #dba52e;
+    --theme-color-link: #c48a1d;
+    --on-accent: #171717;
+    --color-success: #4ade80;
+    --color-error: #f87171;
     --background-gradient-linear: linear-gradient(
       150deg,
       rgba(255, 231, 108, 0.8) 0%,
