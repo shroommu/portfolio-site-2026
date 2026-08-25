@@ -2,31 +2,41 @@
 
 import { useState } from "react";
 
+type FormStatus = "idle" | "sending" | "success" | "error";
+
 export default function Contact() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const [success, setSuccess] = useState<null | boolean>(null);
+  const [status, setStatus] = useState<FormStatus>("idle");
 
-  const onSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
-    fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, subject, message }),
-    }).then((res) => {
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, subject, message }),
+      });
+
       if (res.ok) {
         setEmail("");
         setSubject("");
         setMessage("");
-        setSuccess(true);
+        setStatus("success");
       } else {
-        setSuccess(false);
+        setStatus("error");
       }
-    });
+    } catch {
+      setStatus("error");
+    }
   };
+
+  const isSending = status === "sending";
 
   return (
     <div className="p-4 md:p-8">
@@ -42,6 +52,10 @@ export default function Contact() {
           id="email"
           name="email"
           type="email"
+          required
+          autoComplete="email"
+          spellCheck={false}
+          placeholder="you@example.com…"
           className="w-full p-2 border border-gray-400 rounded-md mb-4 bg-[var(--background-light)]"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -53,6 +67,9 @@ export default function Contact() {
           id="subject"
           name="subject"
           type="text"
+          required
+          autoComplete="off"
+          placeholder="Project inquiry…"
           className="w-full p-2 border border-gray-400 rounded-md mb-4 bg-[var(--background-light)]"
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
@@ -64,26 +81,32 @@ export default function Contact() {
           id="message"
           name="message"
           rows={5}
+          required
+          placeholder="Hi Alex, I wanted to reach out about…"
           className="w-full p-2 border border-gray-400 rounded-md mb-4 bg-[var(--background-light)]"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         ></textarea>
         <button
           type="submit"
-          className="px-4 py-2 bg-[var(--theme-color-accent)] text-[var(--on-accent)] rounded-md hover:bg-[var(--theme-color-accent-light)] mx-auto"
+          disabled={isSending}
+          className="px-4 py-2 bg-[var(--theme-color-accent)] text-[var(--on-accent)] rounded-md hover:bg-[var(--theme-color-accent-light)] disabled:opacity-60 disabled:cursor-not-allowed mx-auto"
         >
-          Send Message
+          {isSending ? "Sending…" : "Send Message"}
         </button>
-        {success === true && (
-          <p className="text-[var(--theme-color-accent)] mt-4">
-            Message sent successfully!
-          </p>
-        )}
-        {success === false && (
-          <p className="text-[var(--theme-color-accent)] mt-4">
-            Failed to send message. Please try again.
-          </p>
-        )}
+        <div aria-live="polite" className="mt-4 text-center">
+          {status === "success" && (
+            <p className="text-[var(--color-success)]">
+              Message sent successfully!
+            </p>
+          )}
+          {status === "error" && (
+            <p role="alert" className="text-[var(--color-error)]">
+              Failed to send message. Please try again, or reach out on
+              LinkedIn instead.
+            </p>
+          )}
+        </div>
       </form>
     </div>
   );
