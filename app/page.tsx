@@ -2,8 +2,28 @@ import Image from "next/image";
 import Link from "next/link";
 
 import FoxLogo from "@/components/FoxLogo";
+import PreviewCard from "@/components/PreviewCard";
+import { parsePostDate } from "@/lib/formatDate";
+import { getMdxPreviews } from "@/lib/mdx";
 
-export default function Home() {
+export default async function Home() {
+  const [posts, projects] = await Promise.all([
+    getMdxPreviews("blog"),
+    getMdxPreviews("projects"),
+  ]);
+
+  const latestWork = [
+    ...posts.map((preview) => ({ ...preview, postType: "blog" as const })),
+    ...projects.map((preview) => ({
+      ...preview,
+      postType: "projects" as const,
+    })),
+  ]
+    .sort(
+      (a, b) => parsePostDate(b.date).getTime() - parsePostDate(a.date).getTime(),
+    )
+    .slice(0, 3);
+
   return (
     <div className="flex flex-col gap-4 items-center p-4 md:p-8">
       <Image
@@ -50,6 +70,28 @@ export default function Home() {
           Read the Blog
         </Link>
       </div>
+      <section className="w-full mt-8" aria-labelledby="latest-work-heading">
+        <h2 id="latest-work-heading" className="text-step-4 text-center mb-4">
+          Latest Work
+        </h2>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {latestWork.map((preview) => (
+            <PreviewCard
+              key={`${preview.postType}-${preview.slug}`}
+              postPreview={preview}
+              postType={preview.postType}
+            />
+          ))}
+        </div>
+        <div className="flex justify-center gap-6 mt-4 text-[var(--theme-color-link)]">
+          <Link href="/projects" className="hover:underline">
+            All projects →
+          </Link>
+          <Link href="/blog" className="hover:underline">
+            All blog posts →
+          </Link>
+        </div>
+      </section>
       <p className="text-center">Thanks for visiting my site!</p>
     </div>
   );
