@@ -228,7 +228,7 @@ export default function AppHeader() {
           role="dialog"
           aria-modal="true"
           aria-label="Site navigation"
-          className={`absolute inset-0 flex flex-col px-4 py-6 bg-[var(--theme-color-accent)] transition-transform duration-300 ease-in-out ${
+          className={`absolute inset-0 flex flex-col px-4 py-6 bg-[var(--theme-color-accent)] transition-transform duration-300 ease-in-out motion-reduce:transition-none ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
