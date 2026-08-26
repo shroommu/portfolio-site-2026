@@ -97,7 +97,7 @@ body {
   background-color: var(--theme-color-black);
   background-repeat: no-repeat;
   color: var(--foreground);
-  font-family: var(--font-shippori);
+  font-family: var(--font-blinker), sans-serif;
   line-height: 1.7;
 }
 
@@ -107,7 +107,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-blinker), serif;
+  font-family: var(--font-shippori), serif;
   line-height: 1.3;
   text-wrap: balance;
 }

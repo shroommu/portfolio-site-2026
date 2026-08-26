@@ -67,7 +67,7 @@ export default function AppHeader() {
         <FoxLogo gradientId="logoGradient-header" className="w-16" />
       </Link>
       <Link href="/" className="flex items-center">
-        <p className="text-step-4 leading-[32px] md:leading-auto md:text-step-5 text-[var(--foreground)] text-center hover:underline hover:text-decoration-[var(--foreground)] font-[var(--font-blinker)]">
+        <p className="text-step-4 leading-[32px] md:leading-auto md:text-step-5 text-[var(--foreground)] text-center hover:underline hover:text-decoration-[var(--foreground)] font-[var(--font-shippori)]">
           Alex Kruckenberg
         </p>
       </Link>
@@ -98,7 +98,7 @@ export default function AppHeader() {
             <li key={href} className="flex items-center">
               <Link
                 href={href}
-                className="flex items-center text-step-1 md:text-step-3 text-[var(--foreground)] hover:underline hover:text-decoration-[var(--foreground)] font-[var(--font-blinker)]"
+                className="flex items-center text-step-1 md:text-step-3 text-[var(--foreground)] hover:underline hover:text-decoration-[var(--foreground)]"
               >
                 {label}
               </Link>
@@ -162,7 +162,7 @@ export default function AppHeader() {
             <Link
               href="/"
               onClick={() => setIsMenuOpen(false)}
-              className="text-[var(--on-accent)] text-step-5 font-[var(--font-blinker)]"
+              className="text-[var(--on-accent)] text-step-5 font-[var(--font-shippori)]"
             >
               Home
             </Link>
@@ -171,7 +171,7 @@ export default function AppHeader() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-[var(--on-accent)] text-step-5 font-[var(--font-blinker)]"
+                className="text-[var(--on-accent)] text-step-5 font-[var(--font-shippori)]"
               >
                 {link.label}
               </Link>

@@ -6,7 +6,18 @@ import AppHeader from "@/components/AppHeader";
 import AppFooter from "@/components/AppFooter";
 
 const blinker = localFont({
-  src: "../public/assets/fonts/Blinker/Blinker-Regular.ttf",
+  src: [
+    {
+      path: "../public/assets/fonts/Blinker/Blinker-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/assets/fonts/Blinker/Blinker-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
   variable: "--font-blinker",
 });
 
