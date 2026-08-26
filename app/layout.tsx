@@ -46,7 +46,7 @@ export default function RootLayout({
         <main
           id="main-content"
           tabIndex={-1}
-          className="w-[90%] md:w-2/3 max-w-6xl min-h-full mx-auto mb-8 bg-[var(--background)] md:drop-shadow-2xl rounded-md"
+          className="w-[90%] md:w-2/3 max-w-6xl min-h-full mx-auto mb-8 bg-[var(--background)] md:drop-shadow-2xl rounded-md dark:border dark:border-white/5"
         >
           {children}
         </main>

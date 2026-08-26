@@ -124,7 +124,7 @@ export default function AppHeader() {
   }, [isMenuOpen]);
 
   return (
-    <header className="relative flex justify-between p-4 mb-8 border-b-[var(--background)] border-b-2 bg-[var(--background)] items-center md:gap-4">
+    <header className="relative flex justify-between p-4 mb-8 border-b-2 border-black/10 dark:border-white/10 shadow-sm bg-[var(--background)] items-center md:gap-4">
       <Link
         href="/"
         className="flex items-center"
