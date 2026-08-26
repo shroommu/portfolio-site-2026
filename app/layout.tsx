@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   title: { default: "Alex Kruckenberg", template: "Alex Kruckenberg | %s" },
   description:
     "The Data Science and Web Development Portfolio of Alex Kruckenberg",
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ededed" },
+    { media: "(prefers-color-scheme: dark)", color: "#171717" },
+  ],
 };
 
 export default function RootLayout({

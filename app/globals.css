@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light dark;
   --foreground: #171717;
   --foreground-pure: #000000;
   --background: #ededed;
