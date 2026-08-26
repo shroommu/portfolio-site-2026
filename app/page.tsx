@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
+
+import FoxLogo from "@/components/FoxLogo";
 
 export default function Home() {
   return (
@@ -11,7 +14,15 @@ export default function Home() {
         priority
         className="w-48 h-48 rounded-full"
       />
-      <h1 className="text-step-5 text-center">Hi, I&apos;m Alex!</h1>
+      <div className="flex items-center justify-center gap-3 md:gap-5">
+        <FoxLogo
+          gradientId="logoGradient-hero"
+          className="w-14 md:w-20 shrink-0"
+        />
+        <h1 className="text-step-5 md:text-step-6 text-center">
+          Hi, I&apos;m Alex!
+        </h1>
+      </div>
       <h2 className="text-step-2 text-center" data-testid="greeting-subheader">
         Software Developer, Data Analyst, Creative
       </h2>
@@ -25,6 +36,20 @@ export default function Home() {
         pet rabbit who rules my life. When I&apos;m not coding, I like to play
         video games and make art (especially cross stitch).
       </p>
+      <div className="flex flex-wrap justify-center gap-4 mt-2">
+        <Link
+          href="/projects"
+          className="px-4 py-2 bg-[var(--theme-color-accent)] text-[var(--on-accent)] rounded-md hover:bg-[var(--theme-color-accent-light)]"
+        >
+          View My Projects
+        </Link>
+        <Link
+          href="/blog"
+          className="px-4 py-2 border-2 border-[var(--theme-color-link)] text-[var(--theme-color-link)] rounded-md hover:underline"
+        >
+          Read the Blog
+        </Link>
+      </div>
       <p className="text-center">Thanks for visiting my site!</p>
     </div>
   );
