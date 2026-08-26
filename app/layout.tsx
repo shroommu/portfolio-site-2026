@@ -36,8 +36,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${blinker.variable} ${shippori.variable}`}>
       <body className="flex flex-col min-h-screen overflow-x-hidden">
+        <a
+          href="#main-content"
+          className="absolute -top-full left-2 z-50 px-4 py-2 underline bg-[var(--background)] text-[var(--theme-color-link)] rounded-md focus:top-2"
+        >
+          Skip to main content
+        </a>
         <AppHeader />
-        <main className="w-[90%] md:w-2/3 min-h-full mx-auto mb-8 bg-[var(--background)] md:drop-shadow-2xl rounded-md">
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="w-[90%] md:w-2/3 min-h-full mx-auto mb-8 bg-[var(--background)] md:drop-shadow-2xl rounded-md"
+        >
           {children}
         </main>
         <AppFooter />
