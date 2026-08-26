@@ -2,15 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { formatDate, toISODate } from "@/lib/formatDate";
-
-export interface PostPreview {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  image: string;
-  tags: string[];
-}
+import type { PostPreview } from "@/lib/mdx";
 
 export default function PreviewCard({
   postPreview,
